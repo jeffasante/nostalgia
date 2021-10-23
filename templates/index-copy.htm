@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='static/css/style.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+    <div class="grid-container">
+        <div class="grid-item item1">
+            <p>Nostalgia</p>
+        </div>
+        <div class="grid-item item2">
+            <p>navbar</p>
+        </div>
+
+    <!-- <form action="/search.html" method="get" autocomplete="off" class="subscribe-form"> -->
+   
+        <div class="grid-item item3">
+            <!-- 3
+            <p>Hold pictures</p> -->
+            <!-- The Usual Suspects -->
+            <h4>...</h4>
+                
+            <!-- <p>{{error}}</p>
+
+            <p>{{user_query}}</p>
+           -->
+           
+           <!-- <p>{{error}}</p>
+           <h5>were you looking for....</h5>
+           <p>{{user_query}}</p> -->
+           
+                
+            <!-- <p>{{error}}</p> -->
+            {% if flag %}
+             <h5>based on your search....</h5>
+            <div class="gallery">
+            
+                <!-- {{data}} -->
+           
+                
+                
+                <div class="  image-1">
+                   {{data[0]}}
+                </div>
+                
+                <div class=" image-2">
+                    {{data[1]}}
+                </div>
+
+                <div class=" image-3">
+                    {{data[2]}}
+                </div>
+
+                
+                <div class=" image-4">
+                    {{data[3]}}
+                </div>
+
+                <div class=" image-5">
+                    {{data[4]}}
+                </div>
+
+                <div class=" image-6">
+                    {{data[5]}}
+                </div>
+
+          
+
+            </div>
+            
+            {% else %}
+            <p>{{error}}</p>
+            <h5>were you looking for....</h5>
+            <p>{{user_query}}</p>
+           
+        {% endif %}
+
+        </div>
+
+        <!-- </form> -->
+
+        <div class="grid-item item4">
+        <form action="/" method="POST">
+
+            <input placeholder="film"/>
+            <input name='text' placeholder="title?"/>
+            <button class="btn">search</button>
+
+        </form> 
+        </div>
+        <!-- <div class="grid-item item5">5</div> -->
+      </div>
+      
+    
+    
+</body>
+</html>
+
+
+                <!-- <div class="gallery">
+                    {% for row in data | batch(4) %}
+                
+                    <div class="image-1">
+                        {% for col in row %}
+                            <p>{{ col }} </p>
+                        {% endfor %}
+                        
+                     </div>
+                     {% endfor %}
+                 
+  
+                 </div>   -->

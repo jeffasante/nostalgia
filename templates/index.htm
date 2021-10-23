@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='static/css/style.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostalgia</title>
+
+    
+</head>
+
+
+<body>
+
+
+    
+    <div class="grid-container">
+        <div class="grid-item item1">
+            <p>Nostalgia</p>
+        </div>
+        <div class="grid-item item2">
+            <!-- <p>navbar</p> -->
+            
+            
+        </div>
+
+    <!-- <form action="/search.html" method="get" autocomplete="off" class="subscribe-form"> -->
+   <!-- The Modal -->
+   
+        <div class="grid-item item3">
+            <!-- 3
+            <p>Hold pictures</p> -->
+            <!-- The Usual Suspects -->
+            <!-- <h4>...</h4> -->
+
+            {% if flag %}
+                <div class="based">
+                    <p >based on your search <b>'{{user_text}}' </b></p>
+                </div>
+             <div class="gallery">
+            
+                {% for index in range(6) %}
+
+                    <div class="card image-{{index}}"> 
+                        <!-- <div class="description"> -->
+                            <img src={{img[data[index]]}} alt={{data[index]}}>
+                        <p><b>  {{data[index]}} </b></p>
+                        <!-- </div> -->
+                            
+                    </div>
+
+                {% endfor %}
+            </div>
+
+        {% else %}
+
+                <h5>were you looking for....</h5>
+                <h4>{{user_query}}</h4>
+           
+
+        {% endif %} 
+
+
+
+        </div>
+
+
+        <div class=" grid-item item4 ">
+        <form action="/" method="POST">
+
+                <input placeholder="film"/>
+
+
+            
+                <input type="search" name='text' class="search"  placeholder="Search.."  id="myInput" autocomplete='off'/>
+         
+                
+             <button class="btn">search</button>
+
+
+            <div id="myDropdown" class="dropdown-content" >   
+            </div>
+
+           
+        </form> 
+        </div>
+        <!-- <div class="grid-item item5">5</div> -->
+      </div>
+      
+    
+    
+</body>
+
+<script>
+
+    window.onclick = function(event) {
+        console.log('wicked')
+        document.getElementById("myDropdown").classList.toggle("none");
+
+      }
+
+function getFunc(e){
+   // document.getElementById("myDropdown").classList.toggle("block");
+    
+    //var a = document.getElementsByTagName('a');
+    var x = document.getElementById("choice").textContent;
+    console.log('clicked me')
+    //console.log(e.target);
+
+    
+   // document.getElementById('myInput').value = a.textContent; //|| a.innerText;
+    //a[i].textContent 
+    
+}
+
+function filterFunc(){
+    let input, filter, a, txtVal;  
+
+    document.getElementById("myDropdown").classList.toggle("show");
+
+    
+//    document.querySelectorAll('dropdown-content').style.display='none'
+
+   // document.getElementById('dropdown-content') -->
+
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    div = document.getElementById('myDropdown');
+
+
+    a = div.getElementsByTagName('a');
+    
+    for (let i=0; i < a.length; i++) {
+        txtVal = a[i].textContent || a[i].innerText;
+        if (txtVal.toUpperCase().indexOf(filter) > 2) {
+         a[i].style.display = "";
+        // a[i].style.height = "50px";
+        } else {
+        a[i].style.display = "none";
+        }
+
+    }
+
+   // document.getElementById("myDropdown").classList.toggle("none");
+
+
+}
+
+
+
+</script>
+</html>
