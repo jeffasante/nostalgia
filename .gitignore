@@ -32,9 +32,10 @@ MANIFEST
 test.ipynb
 /resources/data
 /resources/images
+static/images/
 # /resources/weights
 
-/resources/__pycache__
+/__pycache__
 /recsys.py
 /test.py
 
